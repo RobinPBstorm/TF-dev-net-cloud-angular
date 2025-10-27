@@ -1,0 +1,27 @@
+<h1>Les bindings</h1>
+<section>
+    <h2>Bindings de propriétés</h2>
+    <article>
+        <h3>Le One-way</h3>
+        <p>Lié la valeur d'une propriété mais que en lecture seule</p>
+        <p>En d'autre terme, de la logique vers notre template</p>
+        <p>Bonjour {{name}}</p>
+    </article>
+    <article>
+        <h3>Le Two-way</h3>
+        <p>Ici, nous allons lié notre propriété à notre template et faire en sorte qu'on puisse la modifier</p>
+        <input type="text" [(ngModel)]="name">
+        <p>Noter que la modfier en two-way, s'applique directement sur les one-way</p>
+    </article>
+</section>
+<section>
+    <h2>Bindings d'attribut</h2>
+    <p>Le bindings d'attribut permet modifier la valeur d'un attribut d'une balise</p>
+    <p>Par exemple, prenons l'attribut disabled d'un bouton</p>
+    <button [disabled]="!isClickable">click me!</button>
+</section>
+<section>
+    <h2>Bindings d'événement</h2>
+    <p>On va associer un événément Js (le "click" par exemple) à une méthode dans notre logique</p>
+    <button (click)="editClickable()">click me senpai</button>
+</section>
