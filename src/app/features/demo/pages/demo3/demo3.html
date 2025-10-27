@@ -1,0 +1,18 @@
+<h1>Les pipes</h1>
+<section>
+    <h2>Les pipes "classiques"</h2>
+    <p>Les pipes nous permettent de formatter des informations venant de notre logique.</p>
+    <p>{{ menu | uppercase }}</p>
+
+    <p>On peut aussi formatter des dates:</p>
+    <p>{{ today | date: 'd/M/yy' }}</p>
+    <a href="https://angular.dev/api/common/DatePipe">Liste des formats pour les dates</a>
+</section>
+<section>
+    <h2>Les pipes custom</h2>
+    <p>Nous pouvons créer nos propres pipes.</p>
+    <p>Pour ce faire, nous allons créer le pipe avec la commande:</p>
+    <p>ng generate pipe nom-dossier/nom-pipe</p>
+    <p>Une fois notre pipe crée, on modifie la méthode transform pour collecter à la mise en forme que l'on souhaite</p>
+    <p>{{ maVariable | snakeCase }}</p>
+</section>

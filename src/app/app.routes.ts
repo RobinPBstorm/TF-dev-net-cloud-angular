@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { Home } from './features/home/home';
 import { Demo1 } from './features/demo/pages/demo1/demo1';
 import { Demo2 } from './features/demo/pages/demo2/demo2';
+import { Demo3 } from './features/demo/pages/demo3/demo3';
+import { Exo1 } from './features/exo/pages/exo1/exo1';
 
 export const routes: Routes = [
     {
@@ -25,4 +27,15 @@ export const routes: Routes = [
         component: Demo2,
         title: 'Les bindings'
     },
+    {
+        path: 'demo/demo3',
+        component: Demo3,
+        title: 'Les pipes'
+    },
+    // Les exos
+    {
+        path: 'exo/exo1',
+        component: Exo1,
+        title: 'Le chronomètre'
+    }
 ];

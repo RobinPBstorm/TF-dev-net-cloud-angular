@@ -1,0 +1,22 @@
+<h1>Le chronomètre</h1>
+<section>
+    <h2>Énoncé</h2>
+    <p>Mettre en place un chronomètre</p>
+    <p>avec 3 Boutons (actif/inactif en fonction des besoins):</p>
+    <ul>
+        <li>Start (sera inactif quand le chrono sera en marche)</li>
+        <li>Pause (inactif quan le temp est en pause)</li>
+        <li>Reset (remet à zero et met en pause)</li>
+    </ul>
+    <p>Affichage du temp comme “xx minutes xx secondes”</p>
+    <p>Astuce : cherchez du côté de setInterval() et du string Interpolation de Typescript</p>
+
+</section>
+<section>
+    <h2>Zone de l'exercice:</h2>
+    <p>{{ secondeTotal | chronoFormat }}</p>
+
+    <button [disabled]="isChronoRunning" (click)="StartStop()">Start</button>
+    <button [disabled]="!isChronoRunning" (click)="StartStop()">Pause</button>
+    <button [disabled]="isChronoRunning" (click)="Reset()">Reset</button>
+</section>
