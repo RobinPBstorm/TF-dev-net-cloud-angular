@@ -16,6 +16,7 @@ export class Navbar {
       new Link("Les bindings","/demo/demo2",undefined,false),
       new Link("Le pipes","/demo/demo3",undefined,false),
       new Link("Le directives","/demo/demo4",undefined,false),
+      new Link("Les input / output","/demo/demo5",undefined,false),
     ],true),
     new Link("Mes exercices",undefined,[
       new Link("Le chronomètre","/exo/exo1",undefined,false),

@@ -1,0 +1,18 @@
+<h1>Les inputs et outputs</h1>
+<section>
+    <h2>Quel est le principe ?</h2>
+    <article>
+        <p>On a un composant à l'intérieur de cette page.</p>
+        <p>Ce composant va posséder des propriétés en input, ce qui va permettre de leur donner des valeurs depuis l'extérieur.</p>
+        <p>Et d'autres émetteront des évents lorsque donneront des valeurs</p>
+        <p>Lors de l'émission de cette formation, on fera appel à une méthode de la page</p>
+    </article>
+    <article>
+        <h3>Demonstration</h3>
+        @for (product of products; let i = $index; track i){
+            <app-demo5-enfant [product]="product" [id]="i" (dupliquer)="dupliquerProduct($event)">
+                <p>A prendre en urgence</p>
+            </app-demo5-enfant>
+        }
+    </article>
+</section>
