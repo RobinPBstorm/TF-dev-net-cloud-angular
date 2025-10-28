@@ -1,0 +1,90 @@
+<h1>Les directives</h1>
+<section>
+    <h2>Component Directives</h2>
+    <article>
+        <h3>NgStyle</h3>
+        <p>Cette directivs nous permet de jouer avec le style d'une balise</p>
+        <p>Pour l'utiliser, on doit importer NgStyle du CommonModule</p>
+        <p [ngStyle]="{ color: textColor }">Par exemple</p>
+    </article>
+    <article>
+        <h3>NgClass</h3>
+        <p>Cette directives permet ajouter ou retirer des classes d'une balise</p>
+        <p>Pour l'utiliser, on doit importer NgClass du CommonModule</p>
+        <p [ngClass]="{froid: temperature < 16, chaud: temperature > 30}">Par exemple: il fait {{temperature}} °C aujourd'hui</p>
+    </article>
+    <article>
+        <h3>NgModel</h3>
+        <p>Comme vu dans les bindings, cette directives permet d'associer une propriété de notre logique à notre template</p>
+        <p>L'association va dans les 2 sens</p>
+        <p>Par exemple: faisons notre thermostat</p>
+        <p>Pour l'utiliser, on doit importer NgModel du FormsModule</p>
+        <input type="number" [(ngModel)]="temperature">
+    </article>
+</section>
+<section>
+    <h2>Structural Directives</h2>
+    <article>
+        <h3>@ if / Conditionel </h3>
+        <p>Avec cette directive, on gérer l'affichage de certaines balises en fonction d'une condition</p>
+
+        @if (name.length >= 1) {
+            <p>Bonjour {{name}}</p>
+        } @else {
+            <p>Veuillez vous connecter</p>
+        }
+
+        <!-- Ancienne version -->
+        <!-- <p *ngIf="name.length >= 1; noName">Bonjour {{name}}</p>
+         <ng-template #noName>
+            <p>Veuillez vous connecter</p> 
+         </ng-template>-->
+    </article>
+    <article>
+        <h3>@ for / la boucle</h3>
+        <p>Cette directive nous permet de boucler sur un objet itératif pour pouvoir réaliser un template pour chacun des éléments</p>
+        
+        <ul>
+        @for (fruit of fruits; let i = $index; track i) {
+            <li><p>{{fruit}}</p></li>
+        } @empty {
+            <p>Il n'y a pas de fruit</p>
+        }
+        </ul>
+
+        <!--Acienne notation-->
+        <!-- <ul>
+            <li *ngFor="let fruit of fruits"><p>{{fruit}}</p></li>
+        </ul> -->
+    </article>
+    <article>
+        <h3>@ switch</h3>
+        <p>Cette directive reste dans la même idée des conditions.</p>
+        <p>Et comme le switch en js, on vérifie pour chaque case une et une seule valeur</p>
+        @switch (textColor) {
+            @case ('red') {
+                <p>Les texte est affiché en rouge</p>
+            }
+            @default {
+                <p>La couleur définie n'a pas été listé</p>
+            }
+        }
+
+        <!--Version ancienne-->
+        <!-- <div [ngSwitch]="textColor">
+            <p *ngSwitchCase="'red'">Les texte est affiché en rouge</p>
+            <p *ngSwitchDefault>La couleur définie n'a pas été listé</p>
+        </div> -->
+    </article>
+</section>
+<section>
+    <h2>Les directives custom</h2>
+    <article>
+        <h3>Comment en créer une?</h3>
+        <p>ng generate directive nom-dossier/nom-directive</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <span [appHighlight]="'orange'">Velit exercitationem quasi assumenda libero dicta</span>, eius explicabo? Quae consequatur, voluptas fugiat, illo at iure aliquam, nemo quos qui facere repudiandae iusto.
+        Sunt et facere voluptas placeat culpa soluta distinctio fuga labore deleniti. Quibusdam molestias eligendi eaque illo dolor earum dolorum quasi! Doloremque corporis esse in neque possimus error tempore voluptatibus! Sed.
+        In aut, id recusandae minus dolorum impedit maxime. Aspernatur repudiandae delectus cupiditate cumque nihil consequatur aliquam numquam, fugit laudantium maiores accusamus necessitatibus et corporis eligendi, officia quidem praesentium sed tempora.</p>
+    </article>
+</section>

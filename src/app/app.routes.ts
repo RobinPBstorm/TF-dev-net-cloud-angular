@@ -4,6 +4,8 @@ import { Demo1 } from './features/demo/pages/demo1/demo1';
 import { Demo2 } from './features/demo/pages/demo2/demo2';
 import { Demo3 } from './features/demo/pages/demo3/demo3';
 import { Exo1 } from './features/exo/pages/exo1/exo1';
+import { Demo4 } from './features/demo/pages/demo4/demo4';
+import { Exo2 } from './features/exo/pages/exo2/exo2';
 
 export const routes: Routes = [
     {
@@ -32,10 +34,20 @@ export const routes: Routes = [
         component: Demo3,
         title: 'Les pipes'
     },
+    {
+        path: 'demo/demo4',
+        component: Demo4,
+        title: 'Les directives'
+    },
     // Les exos
     {
         path: 'exo/exo1',
         component: Exo1,
         title: 'Le chronomètre'
+    },
+    {
+        path: 'exo/exo2',
+        component: Exo2,
+        title: 'La navbar'
     }
 ];
