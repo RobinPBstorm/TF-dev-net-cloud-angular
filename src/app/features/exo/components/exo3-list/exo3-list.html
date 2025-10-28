@@ -1,0 +1,10 @@
+<ul>
+    @for (item of articles(); track $index) {
+        <li>
+            <p>{{item}}</p>
+            <button (click)="retirerArticle($index)">-</button>
+        </li>
+    } @empty {
+        <p>Il n'y a pas d'article</p>
+    }
+</ul>

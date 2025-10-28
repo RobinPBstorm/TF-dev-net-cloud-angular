@@ -1,7 +1,7 @@
 import { Directive, ElementRef, HostListener, input } from '@angular/core';
 
 @Directive({
-  selector: '[appHighlight]'
+  selector: '[appHighlight]' // [] => un attribut d'une balise
 })
 export class Highlight {
   // le nom correspond au selecteur

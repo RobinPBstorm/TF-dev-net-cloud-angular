@@ -7,6 +7,7 @@ import { Exo1 } from './features/exo/pages/exo1/exo1';
 import { Demo4 } from './features/demo/pages/demo4/demo4';
 import { Exo2 } from './features/exo/pages/exo2/exo2';
 import { Demo5 } from './features/demo/pages/demo5/demo5';
+import { Exo3 } from './features/exo/pages/exo3/exo3';
 
 export const routes: Routes = [
     {
@@ -55,5 +56,10 @@ export const routes: Routes = [
         path: 'exo/exo2',
         component: Exo2,
         title: 'La navbar'
+    },
+    {
+        path: 'exo/exo3',
+        component: Exo3,
+        title: 'La liste de course'
     }
 ];

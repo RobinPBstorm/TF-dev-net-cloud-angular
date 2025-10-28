@@ -17,6 +17,10 @@ export class Demo5Enfant {
   //Output
   dupliquer: OutputEmitterRef<number> = output();
 
+  // Ancienne notation
+  // @Output() dupliquer: EventEmitter<number> = new EventEmitter()
+
+
   confirmDupliquer(value: number){
     this.dupliquer.emit(value);
   }

@@ -21,6 +21,7 @@ export class Navbar {
     new Link("Mes exercices",undefined,[
       new Link("Le chronomètre","/exo/exo1",undefined,false),
       new Link("La navbar","/exo/exo2",undefined,false),
+      new Link("La liste de course","/exo/exo3",undefined,false),
     ],true),
   ];
 
