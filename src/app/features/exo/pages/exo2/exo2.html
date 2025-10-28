@@ -1,7 +1,18 @@
 <h1>La navbar</h1>
 <section>
     <h2>Énoncé (52)</h2>
-    <p>Sur base d’un modèle Link, mettre en place un menu de navigation réactif en fonction 
-d’une liste de lien définie dans le TS de nav-component- Chaque module sera représenté dans le menu (Demo, Exercices) et sera l’occasion 
-d’un sous-menu affichée/cachée sur un click</p>
+    <article>
+        <p>Sur base d’un modèle Link, mettre en place un menu de navigation réactif en fonction 
+        d’une liste de lien définie dans le TS de nav-component</p>
+        <p>Chaque module sera représenté dans le menu (Demo, Exercices) et sera l’occasion 
+        d’un sous-menu affichée/cachée sur un click</p>
+        <div>
+            <p>export class Link &#123;</p>
+            <p>  public title: string;</p>
+            <p>  public url?: string;</p>
+            <p>  public children?: Link[];</p>
+            <p>  public isVisible?: boolean;</p>
+            <p>&#125;</p>
+        </div>
+    </article>
 </section>

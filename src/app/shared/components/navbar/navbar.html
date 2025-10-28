@@ -1,7 +1,7 @@
 <nav>
     <ul>
         <!-- pas de href car ça recharge toute la page  -->
-        <li><a routerLink="/home">home</a></li>
+        <!-- <li><a routerLink="/home">home</a></li>
         <li><p>Mes demo:</p></li>
         <li><a routerLink="/demo/demo1">Les composants</a></li>
         <li><a routerLink="/demo/demo2">Les bindings</a></li>
@@ -9,6 +9,22 @@
         <li><a routerLink="/demo/demo4">Les directives</a></li>
         <li><p>Mes exercices:</p></li>
         <li><a routerLink="/exo/exo1">Le chronomètre</a></li>
-        <li><a routerLink="/exo/exo2">La navbar</a></li>
+        <li><a routerLink="/exo/exo2">La navbar</a></li> -->
+        @for (link of links; let i = $index;track i){
+            @if (link.url) {
+                <li><a [routerLink]="link.url">{{link.title}}</a></li>
+            } @else {
+                <li class="groupLinks">
+                    <h4 (click)="displayHideChildLink(i)">{{link.title}}</h4>
+                    <ul>
+                        @for (child of link.children; let j = $index;track j) {
+                            @if (child.isVisible) {
+                                <li><a [routerLink]="child.url">{{child.title}}</a></li>
+                            }
+                        }
+                    </ul>
+                </li>
+            }
+        }
     </ul>
 </nav>

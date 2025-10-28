@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    padding: 0px;
+    margin: 0px;;
+}
+app-root {
+    display: flex
+}
+app-navbar {
+    padding: 5px;
+    min-width: 190px;
+}
+main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+nav ul {
+    padding-inline-start: 10px;
+    
+    li {
+        list-style: none;
+    }
+    h4 {
+        margin-top: 0.33em;
+        margin-bottom: 0.33em;
+    }
+    a {
+        text-decoration: none;
+    }
+    .groupLinks {
+        margin-top: 5px;
+        //border: 1px black solid;
+        //border-radius: 10px;
+    }
+}
