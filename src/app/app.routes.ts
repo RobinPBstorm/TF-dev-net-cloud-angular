@@ -8,6 +8,7 @@ import { Demo4 } from './features/demo/pages/demo4/demo4';
 import { Exo2 } from './features/exo/pages/exo2/exo2';
 import { Demo5 } from './features/demo/pages/demo5/demo5';
 import { Exo3 } from './features/exo/pages/exo3/exo3';
+import { Demo6 } from './features/demo/pages/demo6/demo6';
 
 export const routes: Routes = [
     {
@@ -45,6 +46,11 @@ export const routes: Routes = [
         path: 'demo/demo5',
         component: Demo5,
         title: 'Les input / output'
+    },
+    {
+        path: 'demo/demo6',
+        component: Demo6,
+        title: 'Services et DI'
     },
     // Les exos
     {

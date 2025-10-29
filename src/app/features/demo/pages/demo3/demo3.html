@@ -6,7 +6,12 @@
 
     <p>On peut aussi formatter des dates:</p>
     <p>{{ today | date: 'd/M/yy' }}</p>
+    <p>{{ today | date: 'longDate':'+0100':'ja' }}</p>
+    <p>{{ today | date: 'longTime':'+0100':'fr' }}</p>
     <a href="https://angular.dev/api/common/DatePipe">Liste des formats pour les dates</a>
+
+    <p>On peut aussiformatter des monnaies:</p>
+    <p>{{ 123456.789 | currency:'EUR':'symbol':'1.2-2':'fr' }}</p>
 </section>
 <section>
     <h2>Les pipes custom</h2>
