@@ -1,0 +1,14 @@
+ul {
+  border: 1px black solid;
+
+  li {
+      display: flex;
+
+      button {
+          height: 50%;
+          margin-left: 10px;
+          margin-top: auto;
+          margin-bottom: auto;
+      }
+  }
+}

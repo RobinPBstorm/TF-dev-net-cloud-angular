@@ -1,0 +1,14 @@
+<ul>
+  @for (item of articles(); track item.id) {
+      <li>
+          <p>{{item.name}} x{{item.quantity}}</p>
+          <div>
+            <button (click)="decrease(item.id)">➖</button>
+            <button (click)="increase(item.id)">➕</button>
+            <button (click)="retirerArticle(item.id)">❌</button>
+          </div>
+      </li>
+  } @empty {
+      <p>Il n'y a pas d'article</p>
+  }
+</ul>

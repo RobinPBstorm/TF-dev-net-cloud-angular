@@ -1,0 +1,10 @@
+<h1>Exercice 4 - Panier de courses (services)</h1>
+<p>Optimiser la liste de course avec l’utilisation d’un service qui gère la liste et les méthodes qui peuvent s’y appliquer.</p>
+
+<p>Ajouter la possibilité de gérer le nombre d’articles voulu (Ex : Lait x 6, Tomates x 3, …)</p>
+
+<section>
+  <h2>Zone de l'exercice</h2>
+  <app-exo4-article (envoyerArticle)="ajouterArticle($event)" />
+  <app-exo4-list [articles]="articles" (retirer)="retirerArticle($event)" (updateQuantity)="updateQuantity($event)" />
+</section>
