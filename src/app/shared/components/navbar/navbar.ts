@@ -26,6 +26,7 @@ export class Navbar {
       new Link("La navbar", "/exo/exo2", undefined, false),
       new Link("La liste de courses", "/exo/exo3", undefined, false),
       new Link("La liste de courses (services)", "/exo/exo4", undefined, false),
+      new Link("Vérificateur d'âge", "/exo/exo5", undefined, false),
     ], true),
   ];
 
