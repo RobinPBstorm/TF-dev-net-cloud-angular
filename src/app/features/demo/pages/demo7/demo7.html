@@ -5,7 +5,12 @@
   <li><a routerLink="/demo/demo7/experiences">Mes expériences</a></li>
   <li><a routerLink="/demo/demo7/formations">Mes formations</a></li>
   <li><a routerLink="/demo/demo7/competences">Mes competences</a></li>
+  <li><a routerLink="/demo/demo7/routing">Routing</a></li>
 </ul>
+
+<button (click)="navigate()">Naviguer vers competences</button>
+<button (click)="navigateWithParam()">Naviguer vers routing/42</button>
+<button (click)="navigateWithQueryParams()">Naviguer vers routing (avec queryParams)</button>
 
 <hr>
 

@@ -8,6 +8,9 @@ import { Demo6 } from "./pages/demo6/demo6";
 import { MyCompetence } from "./pages/demo7/my-competence/my-competence";
 import { MyExperience } from "./pages/demo7/my-experience/my-experience";
 import { MyFormation } from "./pages/demo7/my-formation/my-formation";
+import { Routing } from "./pages/demo7/routing/routing";
+import { isAuthenticatedGuard } from "../../core/guards/is-authenticated-guard";
+import { leavingGuard } from "../../core/guards/leaving-guard";
 
 export const demoRoutes: Routes = [
   {
@@ -48,6 +51,13 @@ export const demoRoutes: Routes = [
       { path: 'experiences', component: MyExperience },
       { path: 'formations', component: MyFormation },
       { path: 'competences', component: MyCompetence },
+      { path: 'routing', component: Routing },
+      { 
+        path: 'routing/:id', 
+        component: Routing,
+        canActivate: [isAuthenticatedGuard],
+        canDeactivate: [leavingGuard]
+      },
     ]
   },
 ];
