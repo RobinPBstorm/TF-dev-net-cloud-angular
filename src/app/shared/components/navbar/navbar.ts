@@ -18,6 +18,7 @@ export class Navbar {
       new Link("Le directives", "/demo/demo4", undefined, false),
       new Link("Les input / output", "/demo/demo5", undefined, false),
       new Link("Services et DI", "/demo/demo6", undefined, false),
+      new Link("Routing", "/demo/demo7", undefined, false),
     ], true),
     new Link("Mes exercices", undefined, [
       new Link("Le chronomètre", "/exo/exo1", undefined, false),
