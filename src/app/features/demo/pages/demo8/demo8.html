@@ -1,0 +1,109 @@
+<h1>Démonstration 8 - Formulaires (ReactiveForms)</h1>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label for="lastname">Nom:</label> {{ myForm.controls["lastname"].valid }}
+    <input type="text" id="lastname" formControlName="lastname">
+    @if (lastname.touched) {
+      @if (myForm.controls['lastname'].errors && myForm.controls['lastname'].errors['required']) {
+      <span class="error">Le champ est requis.</span>
+      }
+      @if (lastname.errors && lastname.errors['minlength']) {
+      <span class="error">Nombre de caractères minimum: {{ lastname.errors['minlength'].requiredLength }}</span>
+      }
+    }
+  </div>
+
+  <div>
+    <label for="firstname">Prénom:</label> {{ myForm.controls["firstname"].valid }}
+    <input type="text" id="firstname" formControlName="firstname">
+  </div>
+
+  <div>
+    <label for="phone">Téléphone:</label> {{ myForm.controls["phone"].valid }}
+    <input type="phone" id="phone" [formControl]="phoneControl">
+  </div>
+
+  <div>
+    <label for="email">Email:</label> {{ myForm.controls["email"].valid }}
+    <input type="email" id="email" formControlName="email">
+  </div>
+
+  <div>
+    <label for="password">Mot de passe:</label>
+    <input type="password" formControlName="password" id="password">
+    <label for="confirmPassword">Mot de passe:</label>
+    <input type="confirmPassword" formControlName="confirmPassword" id="confirmPassword">
+  </div>
+
+  <div>
+    <label for="birthdate">Date de naissance:</label> {{ myForm.controls["birthdate"].valid }}
+    <input type="date" id="birthdate" formControlName="birthdate">
+  </div>
+
+  <div>
+    <label>Sexe:</label> {{ myForm.controls["sexe"].valid }}
+    <label for="sexeM">
+      <input type="radio" formControlName="sexe" id="sexeM" value="man">
+      Homme
+    </label>
+    <label for="sexeF">
+      <input type="radio" formControlName="sexe" id="sexeF" value="woman">
+      Femme
+    </label>
+  </div>
+
+  <div>
+    <label for="country">Pays:</label> {{ myForm.controls["country"].valid }}
+    <select id="country" formControlName="country">
+      <optgroup label="Europe">
+        <option value="BE">Belgique</option>
+        <option value="NL">Pays-Bas</option>
+        <option value="FR">France</option>
+      </optgroup>
+      <optgroup label="Amérique">
+        <option value="US">États-Unis</option>
+        <option value="MX">Mexique</option>
+        <option value="CA">Canada</option>
+      </optgroup>
+      <optgroup label="Asie">
+        <option value="CN">Chine</option>
+        <option value="JA">Japon</option>
+      </optgroup>
+    </select>
+  </div>
+
+  <!-- <button [disabled]="myForm.invalid">Envoyer</button> -->
+  <button>Envoyer</button>
+
+</form>
+
+<hr>
+
+<h2>FormControl (Abstract Control)</h2>
+
+<div style="display: flex;gap: 50px">
+  <div>
+    <p>Exemple pour lastname:</p>
+    <ul>
+      <li><code>valid</code>: {{ myForm.controls["lastname"].valid }}</li>
+      <li><code>invalid</code>: {{ myForm.controls["lastname"].invalid }}</li>
+      <li><code>pristine</code>: {{ myForm.controls["lastname"].pristine }}</li>
+      <li><code>dirty</code>: {{ myForm.controls["lastname"].dirty }}</li>
+      <li><code>touched</code>: {{ myForm.controls["lastname"].touched }}</li>
+      <li><code>untouched</code>: {{ myForm.controls["lastname"].untouched }}</li>
+    </ul>
+  </div>
+  <div>
+    <p>Exemple pour le formulaire:</p>
+    <ul>
+      <li><code>valid</code>: {{ myForm.valid }}</li>
+      <li><code>invalid</code>: {{ myForm.invalid }}</li>
+      <li><code>pristine</code>: {{ myForm.pristine }}</li>
+      <li><code>dirty</code>: {{ myForm.dirty }}</li>
+      <li><code>touched</code>: {{ myForm.touched }}</li>
+      <li><code>untouched</code>: {{ myForm.untouched }}</li>
+    </ul>
+  </div>
+</div>

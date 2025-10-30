@@ -60,4 +60,9 @@ export const demoRoutes: Routes = [
       },
     ]
   },
+  {
+    path: 'demo8',
+    loadComponent: () => import('./pages/demo8/demo8').then(c => c.Demo8),
+    title: 'Angular | ReactiveForms'
+  }
 ];
