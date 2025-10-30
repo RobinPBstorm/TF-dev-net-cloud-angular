@@ -1,9 +1,5 @@
 import { Routes } from '@angular/router';
 import { Home } from './features/home/home';
-import { Exo1 } from './features/exo/pages/exo1/exo1';
-import { Exo2 } from './features/exo/pages/exo2/exo2';
-import { Exo3 } from './features/exo/pages/exo3/exo3';
-import { Exo4 } from './features/exo/pages/exo4/exo4';
 
 export const routes: Routes = [
     {
@@ -27,24 +23,10 @@ export const routes: Routes = [
 
     // Les exos
     {
-        path: 'exo/exo1',
-        component: Exo1,
-        title: 'Le chronomètre'
-    },
-    {
-        path: 'exo/exo2',
-        component: Exo2,
-        title: 'La navbar'
-    },
-    {
-        path: 'exo/exo3',
-        component: Exo3,
-        title: 'La liste de courses'
-    },
-    {
-        path: 'exo/exo4',
-        component: Exo4,
-        title: 'La liste de courses (services)'
+        path: 'exo',
+        loadChildren: () => import("./features/exo/exo.routes")
+            .then(r => r.exoRoutes),
+        title: 'Angular | Exercices'
     },
 
     // Redirection
