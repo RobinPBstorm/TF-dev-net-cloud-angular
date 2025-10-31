@@ -1,0 +1,17 @@
+
+@if(pokemon.length){
+  <p>Nombre de pokemon {{pokemon.length}} / {{totalCount}}</p>
+
+  @if(hasNext){
+    <button (click)="loadMorePokemon()">Charger plus de pokemon</button>
+  }
+
+  <button (click)="resetListing()">Reset mon listing</button>
+
+  @for(p of pokemon; track p){
+  <div class="pokemon-row" (click)="getPokemonByName(p.name)">{{p.name}}</div>
+  }
+}
+@else{
+  <p>Je n'ai pas de pokemon à afficher, repasse plus tard si tu veux bien!</p>
+}

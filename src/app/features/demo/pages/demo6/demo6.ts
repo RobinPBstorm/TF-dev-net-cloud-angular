@@ -4,14 +4,13 @@ import { Subscription } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 //import { AsyncPipe } from '@angular/common';
 import { StorageService } from '../../../../core/services/storage.service';
-import { Authentication } from "../../../../shared/components/authentication/authentication";
 
 @Component({
   selector: 'app-demo6',
   //Async Pipe peut être utilisé pour attacher un observable directement à la vue
   //Le mécanisme de subscription/unsubscribe est géré automatiquement
   // imports: [AsyncPipe],
-  imports: [Authentication],
+  imports: [],
   templateUrl: './demo6.html',
   styleUrl: './demo6.scss',
 })

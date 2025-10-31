@@ -29,6 +29,15 @@ export const routes: Routes = [
         title: 'Angular | Exercices'
     },
 
+    // Les pokemons
+    {
+        path: 'pokemon',
+        loadChildren: () => import("./features/pokemon/pokemon.routes")
+            .then(r => r.pokeRoutes),
+        title: 'Angular | Pokemon'
+
+    },
+
     // Redirection
     {
         path: '',
@@ -41,6 +50,6 @@ export const routes: Routes = [
         path: '**',
         loadComponent: () => import('./features/errors/not-found/not-found')
             .then(c => c.NotFound),
-        title: 'Angular | Not Found',    
+        title: 'Angular | Not Found',
     }
 ];
