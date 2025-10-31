@@ -11,6 +11,7 @@ import { Link } from '../../models/link';
 export class Navbar {
   links: Link[] = [
     new Link("Home", "/home", undefined, true),
+    new Link("Pokemon", "/pokemon", undefined, true),
     new Link("Mes demos", undefined, [
       new Link("Mon premier component", "/demo/demo1", undefined, false),
       new Link("Les bindings", "/demo/demo2", undefined, false),

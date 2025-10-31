@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
+import { Router } from '@angular/router';
 
 const OFFSET = 0
 const LIMIT = 200
@@ -13,6 +14,7 @@ const LIMIT = 200
 export class PokemonList implements OnInit {
 
   private readonly _pokemonService = inject(PokemonService)
+  private readonly _router = inject(Router)
 
   public pokemon : any[] = [];
 
@@ -54,10 +56,8 @@ export class PokemonList implements OnInit {
 
   }
 
-  public getPokemonByName(pokemonName:string){
-    this._pokemonService.getOnePokemonByName(pokemonName).subscribe(apiCallResult => {
-      console.log("Pokemon details : ", apiCallResult)
-    })
+  public async getPokemonByName(pokemonName:string){
+    this._router.navigate(['/pokemon', pokemonName])
   }
 
   //Callback subscribe du call API

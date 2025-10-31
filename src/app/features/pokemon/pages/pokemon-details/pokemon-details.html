@@ -1,0 +1,8 @@
+@if(pokemon){
+  <img [src]="pokemon.sprites?.front_default" alt="pokemon.name" />
+  <audio controls>
+    <source [src]="pokemon.cries?.latest" type="audio/ogg">
+  </audio>
+}@else{
+  <p> Rien à afficher </p>
+}
