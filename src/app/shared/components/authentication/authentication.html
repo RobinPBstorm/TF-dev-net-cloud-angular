@@ -1,0 +1,7 @@
+<div class="authentication-container">
+  @if(!authenticated){
+    <button (click)="logIn()">Login</button>
+  } @else {
+    <button (click)="logOut()">Logout</button>
+  }
+</div>

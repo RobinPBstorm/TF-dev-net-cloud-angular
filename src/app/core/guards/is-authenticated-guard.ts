@@ -1,14 +1,14 @@
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { inject } from '@angular/core';
+import { firstValueFrom, lastValueFrom } from 'rxjs';
 
-export const isAuthenticatedGuard: CanActivateFn = (route, state) => {
+export const isAuthenticatedGuard: CanActivateFn = async (route, state) => {
+  const _authService: AuthService = inject(AuthService);
+  const _router = inject(Router)
 
-  // const _authService: AuthService = inject(AuthService);
-  // return _authService.isAuthenticated;
+  const authenticated = await firstValueFrom(_authService.bsAuthenticated$);
 
-  return inject(AuthService).isAuthenticated 
-    ? true 
-    : inject(Router).navigate(['demo/demo6']);
-  
+  if(authenticated) return true;
+  else return await _router.navigate(['/']);
 };

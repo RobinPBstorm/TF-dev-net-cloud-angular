@@ -1,22 +1,22 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private _isAuthenticated: boolean = true;
-
-  get isAuthenticated() {
-    return this._isAuthenticated;
-  }
+  private readonly _storageSercice = inject(StorageService)
+  private readonly _bsAuthenticated$ = new BehaviorSubject<boolean>(this._storageSercice.getIsAuth())
+  public readonly bsAuthenticated$ = this._bsAuthenticated$.asObservable();
 
   logIn(): void {
-    this._isAuthenticated = true;
+    this._bsAuthenticated$.next(true);
   }
 
   logOut(): void {
-    this._isAuthenticated = false;
+    this._bsAuthenticated$.next(false);
   }
 
 }
